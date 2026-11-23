@@ -1,0 +1,1000 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "robot": {
+      "type": "object",
+      "properties": {
+        "height_m": {
+          "type": "number",
+          "minimum": 0.3,
+          "maximum": 0.7
+        },
+        "spawn_height_m": {
+          "type": "number",
+          "minimum": 0.3,
+          "maximum": 0.8
+        },
+        "hip_rad": {
+          "type": "number",
+          "minimum": -2.4,
+          "maximum": 2.4
+        },
+        "knee_rad": {
+          "type": "number",
+          "minimum": -2.7,
+          "maximum": 2.7
+        },
+        "abad_rad": {
+          "type": "number",
+          "minimum": -0.5,
+          "maximum": 0.5
+        },
+        "action_scale_rad": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 0.8
+        }
+      },
+      "required": [
+        "height_m",
+        "spawn_height_m",
+        "hip_rad",
+        "knee_rad",
+        "abad_rad",
+        "action_scale_rad"
+      ],
+      "additionalProperties": false,
+      "title": "机器人与参考站姿"
+    },
+    "disturbance": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "warmup_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "ramp_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "interval_s": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0.02,
+            "maximum": 60
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "duration_s": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0.02,
+            "maximum": 2
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "horizontal_force_n": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "vertical_force_n": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -500,
+            "maximum": 500
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "lever_arm_m": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 0.5
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "enabled",
+        "warmup_s",
+        "ramp_s",
+        "interval_s",
+        "duration_s",
+        "horizontal_force_n",
+        "vertical_force_n",
+        "lever_arm_m"
+      ],
+      "additionalProperties": false,
+      "title": "随机推力课程"
+    },
+    "termination": {
+      "type": "object",
+      "properties": {
+        "minimum_height_m": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 0.6
+        },
+        "maximum_tilt_rad": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 1.5
+        },
+        "maximum_anchor_distance_m": {
+          "type": "number",
+          "minimum": 0.2,
+          "maximum": 2
+        },
+        "contact_threshold_n": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 1000
+        }
+      },
+      "required": [
+        "minimum_height_m",
+        "maximum_tilt_rad",
+        "maximum_anchor_distance_m",
+        "contact_threshold_n"
+      ],
+      "additionalProperties": false,
+      "title": "失败条件"
+    },
+    "reset": {
+      "type": "object",
+      "properties": {
+        "joint_offset_rad": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.15
+        },
+        "tilt_rad": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.15
+        }
+      },
+      "required": [
+        "joint_offset_rad",
+        "tilt_rad"
+      ],
+      "additionalProperties": false,
+      "title": "初始误差"
+    },
+    "rewards": {
+      "type": "object",
+      "properties": {
+        "orientation": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "height": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "horizontal_speed": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "vertical_speed": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "angular_speed": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            },
+            "axis_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "minItems": 3,
+              "maxItems": 3
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "position": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "heading": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "joint_pose": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            },
+            "joint_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "minItems": 12,
+              "maxItems": 12
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "action_rate": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            },
+            "joint_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "minItems": 16,
+              "maxItems": 16
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "torque": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            },
+            "joint_weights": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "minItems": 16,
+              "maxItems": 16
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "joint_limits": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            },
+            "safety_margin_rad": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.2
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "body_contact": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        },
+        "fall": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "weight": {
+              "type": "number",
+              "minimum": -1000,
+              "maximum": 0
+            },
+            "tolerance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "cap": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 10000
+            },
+            "label": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "unit": {
+              "type": "string"
+            },
+            "formula": {
+              "type": "string"
+            },
+            "editable": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "enabled",
+            "weight",
+            "tolerance",
+            "scale",
+            "cap",
+            "label",
+            "description",
+            "unit",
+            "formula",
+            "editable"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "orientation",
+        "height",
+        "horizontal_speed",
+        "vertical_speed",
+        "angular_speed",
+        "position",
+        "heading",
+        "joint_pose",
+        "action_rate",
+        "torque",
+        "joint_limits",
+        "body_contact",
+        "fall"
+      ],
+      "additionalProperties": false
+    },
+    "alive_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 20,
+      "title": "存活奖励",
+      "description": "每秒存活奖励；真实失败帧不提供，时间上限帧仍提供。"
+    }
+  },
+  "required": [
+    "schema_version",
+    "robot",
+    "disturbance",
+    "termination",
+    "reset",
+    "rewards",
+    "alive_weight"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ZJ V3 抗扰动站立参数"
+}

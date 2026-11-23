@@ -1,0 +1,72 @@
+# ZJ V3 calibration overlay for Isaac Lab.
+# Fill measured values from the real robot. Keep the source URDF unchanged.
+
+robot:
+  urdf: "D:/xwechat_files/wxid_dw65v2dasu9u22_4b64/msg/file/2026-07/ZJ_V3_URDF_V1_1/ZJ_V3_URDF_V1_1_isaac.urdf"
+  measured_total_mass_kg: null
+  control_dt_s: 0.002
+  action_latency_s: null
+
+# Joint order must match the simulator articulation order.
+# The first 12 are leg joints; the last 4 are continuous foot/wheel joints.
+joints:
+  zero_offset_rad:
+    FAR_ABAD_JOINT: 0.0
+    FAR_HIP_JOINT: 0.0
+    FAR_KNEE_JOINT: 0.0
+    FAR_FOOT_JOINT: 0.0
+    FBL_ABAD_JOINT: 0.0
+    FBL_HIP_JOINT: 0.0
+    FBL_KNEE_JOINT: 0.0
+    FBL_FOOT_JOINT: 0.0
+    RAR_ABAD_JOINT: 0.0
+    RAR_HIP_JOINT: 0.0
+    RAR_KNEE_JOINT: 0.0
+    RAR_FOOT_JOINT: 0.0
+    RBL_ABAD_JOINT: 0.0
+    RBL_HIP_JOINT: 0.0
+    RBL_KNEE_JOINT: 0.0
+    RBL_FOOT_JOINT: 0.0
+  sign:
+    FAR_ABAD_JOINT: 1.0
+    FAR_HIP_JOINT: 1.0
+    FAR_KNEE_JOINT: 1.0
+    FAR_FOOT_JOINT: 1.0
+    FBL_ABAD_JOINT: 1.0
+    FBL_HIP_JOINT: 1.0
+    FBL_KNEE_JOINT: 1.0
+    FBL_FOOT_JOINT: 1.0
+    RAR_ABAD_JOINT: 1.0
+    RAR_HIP_JOINT: 1.0
+    RAR_KNEE_JOINT: 1.0
+    RAR_FOOT_JOINT: 1.0
+    RBL_ABAD_JOINT: 1.0
+    RBL_HIP_JOINT: 1.0
+    RBL_KNEE_JOINT: 1.0
+    RBL_FOOT_JOINT: 1.0
+  measured_velocity_limit_rad_s: null
+  measured_effort_limit_nm: null
+  viscous_damping: null
+  coulomb_friction: null
+
+imu:
+  # Rotation from IMU frame to BASE_LINK frame, in radians.
+  rpy_rad: [0.0, 0.0, 0.0]
+  gyro_bias_rad_s: [0.0, 0.0, 0.0]
+  accel_bias_m_s2: [0.0, 0.0, 0.0]
+
+contact:
+  foot_friction: 0.8
+  wheel_friction: 0.8
+  restitution: 0.0
+
+controller:
+  # Initial values from RK3588 ZGWS configuration.
+  leg_kp: [3.0, 4.0, 3.0]
+  leg_kd: [1.0, 1.0, 1.0]
+  rl_kp: [60.0, 120.0, 120.0]
+  rl_kd: 1.0
+  wheel_kp: 60.0
+  wheel_kd: 0.5
+  body_height_m: 0.48
+  gait_period_s: 0.2

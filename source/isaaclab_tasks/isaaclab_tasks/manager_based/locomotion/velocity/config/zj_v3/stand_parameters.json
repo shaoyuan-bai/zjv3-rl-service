@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "robot": {
+    "height_m": 0.6,
+    "spawn_height_m": 0.62,
+    "hip_rad": 0.35,
+    "knee_rad": -0.7,
+    "abad_rad": 0.0,
+    "action_scale_rad": 0.2
+  },
+  "disturbance": {
+    "enabled": true,
+    "warmup_s": 24.0,
+    "ramp_s": 96.0,
+    "interval_s": [
+      2.0,
+      5.0
+    ],
+    "duration_s": [
+      0.1,
+      0.4
+    ],
+    "horizontal_force_n": [
+      20.0,
+      120.0
+    ],
+    "vertical_force_n": [
+      -10.0,
+      10.0
+    ],
+    "lever_arm_m": [
+      0.15,
+      0.1,
+      0.08
+    ]
+  },
+  "termination": {
+    "minimum_height_m": 0.32,
+    "maximum_tilt_rad": 0.95,
+    "maximum_anchor_distance_m": 2.0,
+    "contact_threshold_n": 10.0
+  },
+  "reset": {
+    "joint_offset_rad": 0.025,
+    "tilt_rad": 0.025
+  },
+  "rewards": {
+    "orientation": {
+      "enabled": true,
+      "weight": -12.0,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 1,
+      "label": "机体直立",
+      "description": "机体重力投影的水平分量，抑制侧倾和俯仰",
+      "unit": "sin(rad)",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "height": {
+      "enabled": true,
+      "weight": -30.0,
+      "tolerance": 0.025,
+      "scale": 1,
+      "cap": 0.5,
+      "label": "站立高度",
+      "description": "避免蹲伏或趴地获得稳定",
+      "unit": "m",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "horizontal_speed": {
+      "enabled": true,
+      "weight": -1,
+      "tolerance": 0.03,
+      "scale": 1,
+      "cap": 3,
+      "label": "水平速度",
+      "description": "受推后尽快停止漂移",
+      "unit": "m/s",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "vertical_speed": {
+      "enabled": true,
+      "weight": -1,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 3,
+      "label": "垂直速度",
+      "description": "抑制上下弹跳",
+      "unit": "m/s",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "angular_speed": {
+      "enabled": true,
+      "weight": -0.3,
+      "tolerance": 0.05,
+      "scale": 1,
+      "cap": 10,
+      "label": "角速度",
+      "description": "抑制滚转、俯仰和偏航晃动",
+      "unit": "rad/s",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "axis_weights": {
+          "type": "array",
+          "length": 3,
+          "item_min": 0.0,
+          "item_max": 10.0
+        }
+      },
+      "axis_weights": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "position": {
+      "enabled": true,
+      "weight": -3.0,
+      "tolerance": 0.1,
+      "scale": 1,
+      "cap": 2,
+      "label": "位置恢复",
+      "description": "允许小范围恢复步，之后回到每回合固定锚点",
+      "unit": "m",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "heading": {
+      "enabled": true,
+      "weight": -1.0,
+      "tolerance": 0.05,
+      "scale": 1,
+      "cap": 3.142,
+      "label": "朝向恢复",
+      "description": "回到初始零偏航角",
+      "unit": "rad",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "joint_pose": {
+      "enabled": true,
+      "weight": -0.5,
+      "tolerance": 0.1,
+      "scale": 1,
+      "cap": 3,
+      "label": "参考站姿",
+      "description": "只约束12个腿关节，允许轮转动和平衡调整",
+      "unit": "rad",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "joint_weights": {
+          "type": "array",
+          "length": 12,
+          "item_min": 0.0,
+          "item_max": 10.0
+        }
+      },
+      "joint_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "action_rate": {
+      "enabled": true,
+      "weight": -0.008,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 20,
+      "label": "动作变化",
+      "description": "减少相邻控制帧指令突变",
+      "unit": "action",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "joint_weights": {
+          "type": "array",
+          "length": 16,
+          "item_min": 0.0,
+          "item_max": 10.0
+        }
+      },
+      "joint_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "torque": {
+      "enabled": true,
+      "weight": -1e-05,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 1000,
+      "label": "力矩代价",
+      "description": "惩罚所有关节实际施加力矩平方和",
+      "unit": "Nm",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "joint_weights": {
+          "type": "array",
+          "length": 16,
+          "item_min": 0.0,
+          "item_max": 10.0
+        }
+      },
+      "joint_weights": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "joint_limits": {
+      "enabled": true,
+      "weight": -2,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 10,
+      "label": "关节限位",
+      "description": "12个腿关节超出软限位的距离总和",
+      "unit": "rad",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)^2",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "safety_margin_rad": {
+          "type": "number",
+          "min": 0,
+          "max": 0.2
+        }
+      },
+      "safety_margin_rad": 0.0
+    },
+    "body_contact": {
+      "enabled": true,
+      "weight": -1,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 20,
+      "label": "非足端接触",
+      "description": "惩罚机身及腿部触地，四个轮足接触不受罚",
+      "unit": "count",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    },
+    "fall": {
+      "enabled": true,
+      "weight": -100,
+      "tolerance": 0,
+      "scale": 1,
+      "cap": 1,
+      "label": "摔倒",
+      "description": "仅真实失败计罚，时间上限重置不计罚",
+      "unit": "event",
+      "formula": "weight * clamp(max(error - tolerance, 0) / scale, 0, cap)",
+      "editable": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "weight": {
+          "type": "number",
+          "min": -1000,
+          "max": 0
+        },
+        "tolerance": {
+          "type": "number",
+          "min": 0,
+          "max": 1000
+        },
+        "scale": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        },
+        "cap": {
+          "type": "number",
+          "exclusive_min": 0,
+          "max": 10000
+        }
+      }
+    }
+  },
+  "alive_weight": 2.0
+}

@@ -1,0 +1,410 @@
+{
+  "base_commit": "80094be3245aa5c8376a7464d29cb4412ea518f5",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size_bytes": 64,
+      "sha256": "0557da305556e31a3d29b790e41a5f8dfaae96f039e3b478e4ee6d5318cdd692"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/base_link.m_p",
+      "size_bytes": 1817,
+      "sha256": "4c4b52c29355943cf5ce4390eb24f618cf76a5d83123b4d8582ef139c588de65"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/BASE_LINK.STL",
+      "size_bytes": 65883684,
+      "sha256": "9ab81ddedd0bd423fb1292f652162842bee3c80a7138e630516aa4a05917ebd3"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/F_AIRY_LINK.STL",
+      "size_bytes": 203984,
+      "sha256": "e5e6ed05836be7b01b187ddce82bcb3242ba81a6f579d46cc0e0bc49f74e38af"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/F_IMX415_LINK.STL",
+      "size_bytes": 143084,
+      "sha256": "91b70883ec1d470a2f8757afa524bab1fb8651333e740debae6312168e3ad94a"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_ABAD_LINK.STL",
+      "size_bytes": 1252584,
+      "sha256": "4070ad0055318d678c986adf3128065e0ba8e8062ac92512162605cc46c86dde"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_FOOT_LINK.STL",
+      "size_bytes": 3243984,
+      "sha256": "243fb67e514f88a832cc79d3c66d003cd6f6f7a91ca8702e164bd9baa1e5819d"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_HIP_LINK.STL",
+      "size_bytes": 5746184,
+      "sha256": "3a62da454115da40c627874f22557b12c07d7fe0b703248bae2be13273aecf81"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_KNEE_LINK.STL",
+      "size_bytes": 4705784,
+      "sha256": "47708f09c0ee217c8082bf732ce6a88e9f816dcb4aa787f92e1e832415959a60"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_LIHGT_LINK.STL",
+      "size_bytes": 831384,
+      "sha256": "ebe5fa6dc310ee3042b1c318b35d15f0d293e7fbf092d710a0bf81ef418a1ecf"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FAR_RADARA22_LINK.STL",
+      "size_bytes": 417784,
+      "sha256": "570f5b43cc5422e42facd639333cf46262c7c4def7bfb9e54be2651ec3a369d0"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_ABAD_LINK.STL",
+      "size_bytes": 1252584,
+      "sha256": "fc680650f3d3190ba0631428b221921dab9570411a5fa67bc39cedefae661bda"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_FOOT_LINK.STL",
+      "size_bytes": 3243984,
+      "sha256": "a594bf630cb57e228140eb3a20fd712f7c65791fdbdee84855453efb0b5cce1d"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_HIP_LINK.STL",
+      "size_bytes": 5746184,
+      "sha256": "c71f433239987927f4f9bc554a9b8841fb9af014023a3d646ac743a790677019"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_KNEE_LINK.STL",
+      "size_bytes": 4705784,
+      "sha256": "4fc15f27981b2c12a88af3d77cc70f878049009114164131341dd245c24ff8ea"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_LIHGT_LINK.STL",
+      "size_bytes": 831384,
+      "sha256": "659bb67f54974e5db1dc06c671e591ab667f7a35a305e54310d3733615920c78"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/FBL_RADARA22_LINK.STL",
+      "size_bytes": 417784,
+      "sha256": "853df3ddd6187f5a724e029a6fa7b5f734159742508cc1205b500aaec891babc"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/IMU_ICM42688_LINK.STL",
+      "size_bytes": 454184,
+      "sha256": "33997657c66f01a51e08ce8bb8d8f4abcceaf9435c918822905f5ad8abf3116b"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/IMU_LUA300C_LINK.STL",
+      "size_bytes": 107184,
+      "sha256": "0e41e7e40ea340928fd0f7cbf8b3bb082c91ae820a1ed904284f1aa46905ef97"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/R_AIRY_LINK.STL",
+      "size_bytes": 203984,
+      "sha256": "8d5663cf1872edbea4b0f9bbceb00f75545fd339e986f41461e691836a024a2f"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/R_IMX415_LINK.STL",
+      "size_bytes": 143084,
+      "sha256": "30a3095efed21ab2ba90bb38d63f251ef6c636a65ad6e6db0f165b60db017838"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RAR_ABAD_LINK.STL",
+      "size_bytes": 1252584,
+      "sha256": "cef591feb0b1468f1e75152f8b55bca5352e6a8270a27b49517019a20d121d47"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RAR_FOOT_LINK.STL",
+      "size_bytes": 3243984,
+      "sha256": "243fb67e514f88a832cc79d3c66d003cd6f6f7a91ca8702e164bd9baa1e5819d"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RAR_HIP_LINK.STL",
+      "size_bytes": 5746184,
+      "sha256": "5246ad50e70f560b21749e573ce24a0e5535899e6bf6be0444168c7b3712d8e3"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RAR_KNEE_LINK.STL",
+      "size_bytes": 4705784,
+      "sha256": "27a70b31613160edcc5f1b94a70c9084b03cffd0115a46d5e7f54d9232827b46"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RAR_LIHGT_LINK.STL",
+      "size_bytes": 831384,
+      "sha256": "de0e54cb8107d5512be44cc2e76231bf828a592136055f7b33c4860a00e19215"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RBL_ABAD_LINK.STL",
+      "size_bytes": 1252584,
+      "sha256": "c745d9c025ff80054112f5f589c339855af0ac2184974a32f28f67afbf8f93d4"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RBL_FOOT_LINK.STL",
+      "size_bytes": 3243984,
+      "sha256": "24d5bb07345ba0b6401c95328c764940a2ad767f7d11e40dfb7a4f8afaffe273"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RBL_HIP_LINK.STL",
+      "size_bytes": 5746184,
+      "sha256": "1b30ab1e9c92338fd15b856bd5d69382549e0b5ae69bab95b3c8ed0f68bb9aff"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RBL_KNEE_LINK.STL",
+      "size_bytes": 4705784,
+      "sha256": "8572dc3ebbfda5a925be6babfe158e7a5e2aa56412288d1c30342ac8c70f0447"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/meshes/RBL_LIHGT_LINK.STL",
+      "size_bytes": 831384,
+      "sha256": "0d3f0d415b25368af74297e0cd1f365ac1a716e0a6f65101d336f3ad9484ab00"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/ZJ_V3_URDF_V1_1.urdf",
+      "size_bytes": 36097,
+      "sha256": "c7b62a70c19324ecf80323b4db10c0e32d2382dc07c6e8b00fbd0897ee09b17b"
+    },
+    {
+      "path": "assets/robots/zj_v3/source/ZJ_V3_URDF_V1_1_isaac.urdf",
+      "size_bytes": 35874,
+      "sha256": "9c71993d96a3e7a2322ea12a0b37ab0160b55ca8a8dd2adfad5de081744bf6c1"
+    },
+    {
+      "path": "integrations/rl_service/__init__.py",
+      "size_bytes": 82,
+      "sha256": "eb063ec7677fc0f0579856a405a8113aff880677960a0bf05508910fc68c2b08"
+    },
+    {
+      "path": "integrations/rl_service/__main__.py",
+      "size_bytes": 1441,
+      "sha256": "7a32b635dc0850f4c958e99c51ebb711eeb9c21471692e3bc1d14417232ea968"
+    },
+    {
+      "path": "integrations/rl_service/api.py",
+      "size_bytes": 10637,
+      "sha256": "55c50f8d9554271e12ed8e27f704419934a8ff1f9e97befc3f007b945fab6758"
+    },
+    {
+      "path": "integrations/rl_service/core.py",
+      "size_bytes": 32661,
+      "sha256": "a4612a8c7c312fd199ad5c9780ca7c0cd039ddb81b9d72d6852e2815f417611e"
+    },
+    {
+      "path": "integrations/rl_service/packaging.py",
+      "size_bytes": 3528,
+      "sha256": "e4e5972a76e05800a52ca2f4d25aa58fa749e0c053c5ce30576dc18e54978677"
+    },
+    {
+      "path": "integrations/rl_service/requirements.txt",
+      "size_bytes": 67,
+      "sha256": "f3490f4ec954946f5f107bcd6dc712acb62701472fcf2c88a79f3bba1d7ec97f"
+    },
+    {
+      "path": "integrations/rl_service/settings.py",
+      "size_bytes": 3734,
+      "sha256": "8a52af7141277b23e6a59164777ca43ba10f5a65c5730ed6b0961b57e6d7e2fd"
+    },
+    {
+      "path": "integrations/rl_service/smoke_api.py",
+      "size_bytes": 3634,
+      "sha256": "f90e2ee97957f87fd5a9b23492ec4a9a46af234e415253df82537801ffb614be"
+    },
+    {
+      "path": "integrations/rl_service/static/swagger/favicon.svg",
+      "size_bytes": 200,
+      "sha256": "0916090d80dfc9238a7e36ca7440b161a659a625d6425b4fd98c9f28ae7c28ae"
+    },
+    {
+      "path": "integrations/rl_service/static/swagger/LICENSE",
+      "size_bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "integrations/rl_service/static/swagger/swagger-ui-bundle.js",
+      "size_bytes": 1452753,
+      "sha256": "c2e4a9ef08144839ff47c14202063ecfe4e59e70a4e7154a26bd50d880c88ba1"
+    },
+    {
+      "path": "integrations/rl_service/static/swagger/swagger-ui.css",
+      "size_bytes": 152071,
+      "sha256": "40170f0ee859d17f92131ba707329a88a070e4f66874d11365e9a77d232f6117"
+    },
+    {
+      "path": "integrations/rl_service/test_service.py",
+      "size_bytes": 14052,
+      "sha256": "1abd1fed66ca6512499edb55e057c4356b1b78281b658a823d0065550a59127f"
+    },
+    {
+      "path": "integrations/rl_service/worker.py",
+      "size_bytes": 1625,
+      "sha256": "6a2d700897b5aa9c93ce436f24b5f619de59b476f4e8bece82aed9286aa88e4a"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1660,
+      "sha256": "628407f4685a57fefb9182afd6925e634bb15b2cda03cfa72baa81daa9ce7bfd"
+    },
+    {
+      "path": "LICENSE-mimic",
+      "size_bytes": 10317,
+      "sha256": "88046bf22d5b4f4b8cc85079ae6aae5424a3a1999db952ed152828ff325b2c6d"
+    },
+    {
+      "path": "pyproject.toml",
+      "size_bytes": 4048,
+      "sha256": "07e61f88144c1bf50288e4ad4137381a25d4d97479530f0e157d2a9ed543e0b9"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 1192,
+      "sha256": "252845b40623c9184a5df91f606292e18c8a7cce21823cd8e5b8e6461850a947"
+    },
+    {
+      "path": "rl_service.json",
+      "size_bytes": 295,
+      "sha256": "1b131191aa96814ad03520677ebd21b4a2ddc8c727febac62c46be3f12358951"
+    },
+    {
+      "path": "scripts/my/README_ZJV3_TRAINING.md",
+      "size_bytes": 2015,
+      "sha256": "1fdd1974ecf816cc89167be5323dd96d0dc1dffa1bca48ccf287922a9e3d25fa"
+    },
+    {
+      "path": "scripts/my/zj_v3_calibration_template.yaml",
+      "size_bytes": 1838,
+      "sha256": "feb71d509f0719e6eb474492e9f1eb827156d2a2ef1cea5b6fc21304f9aad67b"
+    },
+    {
+      "path": "scripts/my/zj_v3_check_export.py",
+      "size_bytes": 1330,
+      "sha256": "e86107f2219670a46c9d3a02ab329cef6b46c5222ccd3b78355c3c8a128371dd"
+    },
+    {
+      "path": "scripts/my/zj_v3_import_test.py",
+      "size_bytes": 180,
+      "sha256": "0516cfda6713d0d6627a22752b1d018add8373b759fd26bc5bc3be1dbf69dec2"
+    },
+    {
+      "path": "scripts/my/zj_v3_prepare_asset.py",
+      "size_bytes": 3305,
+      "sha256": "27bb540aecf49a6e784818222bde39340d576a272ec4b9f4b335c3bfae16c94d"
+    },
+    {
+      "path": "scripts/my/zj_v3_raw_model_probe.py",
+      "size_bytes": 1339,
+      "sha256": "2419a407d0fe239d21acd2cb1fbf638c6fa78341580103e8392b2c713909ca6c"
+    },
+    {
+      "path": "scripts/my/zj_v3_rl_env_preview.py",
+      "size_bytes": 6778,
+      "sha256": "3ff866a5d6b55187cef6a78717251818fb84d5a74eb1515d2d60d6f5c54481ae"
+    },
+    {
+      "path": "scripts/my/zj_v3_runtime_probe.py",
+      "size_bytes": 794,
+      "sha256": "72256ee637a934cf2901a42dbc4656a7ac838dab07dbc684952335dfa44c3d14"
+    },
+    {
+      "path": "scripts/my/zj_v3_stand.py",
+      "size_bytes": 14085,
+      "sha256": "9d255af6d4046e54752b208a7717c77bad09fa162cbd6d8679a68ca4f9d9f7ba"
+    },
+    {
+      "path": "scripts/my/zj_v3_stand_verify.py",
+      "size_bytes": 2977,
+      "sha256": "fcc4a9d93da881974e5d9b1bef7ffe8bf5d0ab8f649db4de03e0a67515437510"
+    },
+    {
+      "path": "scripts/my/zj_v3_training_plot.py",
+      "size_bytes": 1633,
+      "sha256": "289160fc9d440eda6d834051f37f9ca215a4e11a933b5ff2c3cd3533636f6d97"
+    },
+    {
+      "path": "scripts/my/zj_v3_urdf_calibration_report.py",
+      "size_bytes": 5242,
+      "sha256": "6122decb95556187090a5881e8851ee8d973568f592d4dba221be06eb2854138"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/__init__.py",
+      "size_bytes": 1042,
+      "sha256": "b978e65172a8a8de211d88ba62ca1a75c94b37b06854034f7c04c51cf9a3dcf9"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/agents/__init__.py",
+      "size_bytes": 45,
+      "sha256": "e8d16618b0f76e7f2bb93277978a9a7614b9127c0319695e45cdc6a17b497f36"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/agents/rsl_rl_ppo_cfg.py",
+      "size_bytes": 1135,
+      "sha256": "cf7dc8e87a61974de72f009aab8a88b3d5d20296fbde4fb00cc0564aa1e2eff7"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/flat_env_cfg.py",
+      "size_bytes": 2841,
+      "sha256": "21bac0afcd322e677c07a39db6f19a3fe9fdc83655ef63c9663e820e760c0ac0"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/robot_cfg.py",
+      "size_bytes": 1757,
+      "sha256": "57c8baadd98ad68605caaadc3b33e72babc44a3d8fe46c2a93ea9fb95817edc4"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_env.py",
+      "size_bytes": 3473,
+      "sha256": "027d65e0cf1e0cee252ed13921345780b0de04ce8ea27c5e548b7ca06468c70b"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_env_cfg.py",
+      "size_bytes": 3983,
+      "sha256": "48a3bb836030643febf79fd35141f94e0e3ccf09453dfe1c9289cb9a0e8a7692"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_mdp.py",
+      "size_bytes": 3196,
+      "sha256": "5648f2785765cff30e37793af1b718f73d846f9b2bab38301951f6f8af3e5a1f"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_parameters.json",
+      "size_bytes": 13812,
+      "sha256": "8825f82d20a7c1696dffadec7a653a0edc957808cbdeb3204c20ed4f59ee6bcc"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_parameters.schema.json",
+      "size_bytes": 25046,
+      "sha256": "2a63d17de6b23b7a96aeb46fcb5a40264fe3635905983be08dd806d92b7179f5"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/stand_settings.py",
+      "size_bytes": 1314,
+      "sha256": "672b1d2ae23b7ef754c646838aa0951f42a6583b813765d425a51fc9387a3537"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/STANDING_API.md",
+      "size_bytes": 36140,
+      "sha256": "3da4a29fe049bb0ce7e2757b8afd7c60c682ef076611f07ca1263201aff33d85"
+    },
+    {
+      "path": "source/isaaclab_tasks/isaaclab_tasks/manager_based/locomotion/velocity/config/zj_v3/STANDING_GUIDE.md",
+      "size_bytes": 8744,
+      "sha256": "afa5ec47f9ae391ee0426747d76685f8fa1704d292d6464fe47b413ce8533b3f"
+    },
+    {
+      "path": "start_rl_service.sh",
+      "size_bytes": 249,
+      "sha256": "740c78bb62162c3eac1fd5849d53bed9bc75ced7ee81742530e1574761eb9075"
+    },
+    {
+      "path": "start_rl_service_background.ps1",
+      "size_bytes": 1058,
+      "sha256": "262f228a8fb41cd3b5fc8bd48cb19aaaa683b94a5f0941682f819d823aacb33e"
+    },
+    {
+      "path": "stop_rl_service.ps1",
+      "size_bytes": 615,
+      "sha256": "1cee8f5f1d3d92ccacd7cb7f599e6fb2a72a249b3182e016233932cc8af7c657"
+    },
+    {
+      "path": "VERSION",
+      "size_bytes": 7,
+      "sha256": "06422ec926e5945ba64744f935f3bf0b2c29c8b3a1fbb0fef56e01082a0b3af5"
+    }
+  ]
+}

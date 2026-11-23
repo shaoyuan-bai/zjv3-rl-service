@@ -1,0 +1,14 @@
+{
+  "host": "127.0.0.1",
+  "port": 8000,
+  "python": null,
+  "data_dir": "runtime/rl",
+  "robot_usd": "assets/robots/zj_v3/robot.usd",
+  "device": "cuda:0",
+  "cors_origins": [],
+  "allowed_client_ips": [
+    "127.0.0.1",
+    "::1"
+  ],
+  "api_token_env": "RL_SERVICE_API_TOKEN"
+}
